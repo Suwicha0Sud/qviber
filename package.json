@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "viber-bot": "1.0.14",
+    "express": "~4.15.5",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.1",
+    "mongojs": "^2.5.0",
+    "mongoose": "^5.2.2"
+  }
+}

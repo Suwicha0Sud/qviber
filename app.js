@@ -47,6 +47,8 @@ const StickerMessage = require('viber-bot').Message.Sticker;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const KeyboardMessage = require('viber-bot').Message.Keyboard;
 
+
+//MainKeyboard || RichMunu
 var mainkey = {
     "Type": "keyboard",
     "Revision": 1,
@@ -118,8 +120,8 @@ var mainkey = {
             "Text": "ATM Near Me",
             "TextVAlign": "middle",
             "TextHAlign": "center",
-            "TextOpacity": 60,
-            "TextSize": "regular"
+            "TextOpacity": 80,
+            "TextSize": "large"
         },
         {
             "Columns": 2,
@@ -130,16 +132,189 @@ var mainkey = {
             "ActionType": "reply",
             "ActionBody": "MoreOption",
             "Text": "More Option",
-            "TextVAlign": "middle",
+            "TextVAlign": "bottom",
             "TextHAlign": "center",
             "TextOpacity": 60,
-            "TextSize": "regular"
+            "TextSize": "large"
         }
 
     ]
 };
 var mainkeySendback = new KeyboardMessage(mainkey);
 var mainkeytrack = "keyboard Menu";
+//SecondKeyboard 
+var subkey = {
+    "Type": "keyboard",
+    "Revision": 1,
+    "Buttons": [
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Credit",
+            "Text": "<b>Check Credit</b>",
+            "TextVAlign": "bottom",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Request loan",
+            "Text": "Request a loan",
+            "TextVAlign": "bottom",
+            "TextHAlign": "center",
+            "TextOpacity": 70,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Change Credit Limit",
+            "Text": "Change Credit Limit",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "CheckPoint",
+            "Text": "Check Credit Point",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgMedia": "https://icon-library.net/images/3-dot-icon/3-dot-icon-14.jpg",
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Back",
+            "Text": "Back to MainMenu",
+            "TextVAlign": "bottom",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        }
+
+    ]
+};
+var subkeysendback = new KeyboardMessage(subkey);
+var subkeytrack = "keyboard Menu";
+
+
+var FlexMenu = {
+    "Type": "rich_media",
+    "ButtonsGroupColumns": 6,
+    "ButtonsGroupRows": 7,
+    "BgColor": "#FFFFFF",
+    "Buttons": [
+        {
+            "Columns": 6,
+            "Rows": 3,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 2,
+            "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
+            "ActionType": "open-url",
+            "ActionBody": "https://www.google.com",
+            "TextSize": "medium",
+            "TextVAlign": "middle",
+            "TextHAlign": "left"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "https://www.google.com",
+            "Text": "<font color=#ffffff>Buy</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle",
+            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "https://www.google.com",
+            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "TextSize": "small",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 3,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.google.com",
+            "Image": "http://demo.convergence.co.th:50003/viewUpload/336336Original.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 2,
+            "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
+            "ActionType": "open-url",
+            "ActionBody": "https://www.google.com",
+            "TextSize": "medium",
+            "TextVAlign": "middle",
+            "TextHAlign": "left"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "https://www.google.com",
+            "Text": "<font color=#ffffff>Buy</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle",
+            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "https://www.google.com",
+            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "TextSize": "small",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Cancel",
+            "Text": "<font color=#8367db>Cancel</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        }
+    ]
+}
+
 app.post('/viber/webhooks', bot.middleware(), (req, res) => {
     const data = {
         "status": 0,
@@ -180,103 +355,9 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     ], mainkeytrack);
                 }
                 else if (msg.message.text == 'MoreOption') {
-                    var sendback = {
-                        "Type": "rich_media",
-                        "ButtonsGroupColumns": 6,
-                        "ButtonsGroupRows": 7,
-                        "BgColor": "#FFFFFF",
-                        "Buttons": [
-                            {
-                                "Columns": 6,
-                                "Rows": 3,
-                                "ActionType": "none",
-                                "ActionBody": "none",
-                                "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 2,
-                                "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
-                                "ActionType": "open-url",
-                                "ActionBody": "https://www.google.com",
-                                "TextSize": "medium",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "left"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#ffffff>Buy</font>",
-                                "TextSize": "large",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle",
-                                "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#8367db>MORE DETAILS</font>",
-                                "TextSize": "small",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 3,
-                                "ActionType": "open-url",
-                                "ActionBody": "https://www.google.com",
-                                "Image": "http://demo.convergence.co.th:50003/viewUpload/336336Original.jpg"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 2,
-                                "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
-                                "ActionType": "open-url",
-                                "ActionBody": "https://www.google.com",
-                                "TextSize": "medium",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "left"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#ffffff>Buy</font>",
-                                "TextSize": "large",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle",
-                                "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#8367db>MORE DETAILS</font>",
-                                "TextSize": "small",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 7,
-                                "ActionType": "reply",
-                                "ActionBody": "Cancel",
-                                "Text": "<font color=#8367db>Cancel</font>",
-                                "TextSize": "large",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle"
-                            }
-                        ]
-                    }
-                    bot.sendMessage(userProfile, [
-                        new RichMediaMessage(sendback)
-                    ], "FlexMenu");
+                    
+                    bot.sendMessage(userProfile, subkeysendback, mainkeytrack)
+
                 } 
                 else if (msg.message.text == 'location') {
                     bot.sendMessage(userProfile, [
@@ -295,10 +376,19 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     ], mainkeytrack)
 
                 }
+                else if (msg.message.text == 'Promotion') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage(FlexMenu)
+                    ], "FlexMenu");
+                }
+                else if (msg.message.text == 'Back') {
+                    bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
+                }
                 else {
                     bot.sendMessage(userProfile, [
-                        new TextMessage("This Message out Of Condition ")
-                    ]);
+                        new TextMessage("Sorry I don't understand "),
+                        mainkeySendback
+                    ], mainkeytrack);
                 }
                 // msgsendback
             }
@@ -309,14 +399,16 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 }
                 else {
                     bot.sendMessage(userProfile, [
-                        new TextMessage("This Message out Of Condition ")
-                    ]);
+                        new TextMessage("Sorry I don't understand "),
+                        mainkeySendback
+                    ], mainkeytrack);
                 }
             } 
             else {
                 bot.sendMessage(userProfile, [
-                    new TextMessage("Tracking data is undefined")
-                ]);
+                    new TextMessage("Sorry I don't understand "),
+                    mainkeySendback
+                ], mainkeytrack);
             }
 
 
@@ -329,109 +421,8 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     bot.getBotProfile().then(response => {
                         bot.sendMessage(userProfile, new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + " Write 'keyboard' For Open Menu"));
                     });
-                }
-                else if (msgtext.search("show list") != -1 ) {
-                    var sendback = {
-                        "Type": "rich_media",
-                        "ButtonsGroupColumns": 6,
-                        "ButtonsGroupRows": 7,
-                        "BgColor": "#FFFFFF",
-                        "Buttons": [
-                            {
-                                "Columns": 6,
-                                "Rows": 3,
-                                "ActionType": "none",
-                                "ActionBody": "none",
-                                "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 2,
-                                "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
-                                "ActionType": "open-url",
-                                "ActionBody": "https://www.google.com",
-                                "TextSize": "medium",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "left"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#ffffff>Buy</font>",
-                                "TextSize": "large",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle",
-                                "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#8367db>MORE DETAILS</font>",
-                                "TextSize": "small",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 3,
-                                "ActionType": "open-url",
-                                "ActionBody": "https://www.google.com",
-                                "Image": "http://demo.convergence.co.th:50003/viewUpload/336336Original.jpg"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 2,
-                                "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
-                                "ActionType": "open-url",
-                                "ActionBody": "https://www.google.com",
-                                "TextSize": "medium",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "left"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#ffffff>Buy</font>",
-                                "TextSize": "large",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle",
-                                "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "ActionType": "reply",
-                                "ActionBody": "https://www.google.com",
-                                "Text": "<font color=#8367db>MORE DETAILS</font>",
-                                "TextSize": "small",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle"
-                            },
-                            {
-                                "Columns": 6,
-                                "Rows": 7,
-                                "ActionType": "reply",
-                                "ActionBody": "Cancel",
-                                "Text": "<font color=#8367db>Cancel</font>",
-                                "TextSize": "large",
-                                "TextVAlign": "middle",
-                                "TextHAlign": "middle"
-                            }
-                        ]
-                    }
-                    bot.sendMessage(userProfile, [
-                        new TextMessage("This is what you want"),
-                        new RichMediaMessage(sendback)
-                    ],"FlexMenu");
-                }               
+                }              
                 else if (msgtext.search('help') != -1) {
-
                     bot.sendMessage(userProfile, new TextMessage("What do you want ? "));
                 }
                 else if (msgtext.search("keyboard") != -1 ) {
@@ -439,13 +430,19 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 }
                 else if (msgtext.search("location") != -1) {
                     const msgsendback = new LocationMessage(13.8142509, 100.5408628);
-                    bot.sendMessage(userProfile, msgsendback)
+                    bot.sendMessage(userProfile, [
+                        msgsendback,
+                        mainkeySendback
+                    ], mainkeytrack)
                 }
                 else {
                     console.log("++++++++++++++++++++++++++++++++++++")
                     console.log(msg)
                     console.log("++++++++++++++++++++++++++++++++++++")
-                    bot.sendMessage(userProfile, new TextMessage("Sorry , I Don't UnderStand This Word"));
+                    bot.sendMessage(userProfile,[
+                            new TextMessage("Sorry , I Don't UnderStand This Word"),
+                            mainkeySendback
+                    ], mainkeytrack);
                 }
 
             }

@@ -40,6 +40,7 @@ const httpsOptions = {
 const TextMessage = require('viber-bot').Message.Text;
 const UrlMessage = require('viber-bot').Message.Url;
 const ContactMessage = require('viber-bot').Message.Contact;
+const FileMessage = require('viber-bot').Message.File;
 const PictureMessage = require('viber-bot').Message.Picture;
 const VideoMessage = require('viber-bot').Message.Video;
 const LocationMessage = require('viber-bot').Message.Location;
@@ -61,11 +62,6 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Balance",
-            "Text": "Check Balance",
-            "TextVAlign": "bottom",
-            "TextHAlign": "center",
-            "TextOpacity": 60,
-            "TextSize": "regular"
         },
         {
             "Columns": 2,
@@ -75,11 +71,6 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "News",
-            "Text": "Check News ",
-            "TextVAlign": "bottom",
-            "TextHAlign": "center",
-            "TextOpacity": 70,
-            "TextSize": "regular"
         },
         {
             "Columns": 2,
@@ -89,11 +80,6 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Promotion",
-            "Text": "Check Promotion",
-            "TextVAlign": "middle",
-            "TextHAlign": "center",
-            "TextOpacity": 60,
-            "TextSize": "regular"
         },
         {
             "Columns": 2,
@@ -103,11 +89,6 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "report",
-            "Text": "Report ",
-            "TextVAlign": "middle",
-            "TextHAlign": "center",
-            "TextOpacity": 60,
-            "TextSize": "regular"
         },
         {
             "Columns": 2,
@@ -154,8 +135,8 @@ var subkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Credit",
-            "Text": "<b>Check Credit</b>",
-            "TextVAlign": "bottom",
+            "Text": "Check Credit",
+            "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 60,
             "TextSize": "large"
@@ -168,7 +149,7 @@ var subkey = {
             "ActionType": "reply",
             "ActionBody": "Request loan",
             "Text": "Request a loan",
-            "TextVAlign": "bottom",
+            "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 70,
             "TextSize": "large"
@@ -229,16 +210,16 @@ var FlexMenu = {
         {
             "Columns": 6,
             "Rows": 3,
-            "ActionType": "none",
-            "ActionBody": "none",
+            "ActionType": "reply",
+            "ActionBody": "View More Microphone Picture",
             "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
         },
         {
             "Columns": 6,
             "Rows": 2,
             "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
-            "ActionType": "open-url",
-            "ActionBody": "https://www.google.com",
+            "ActionType": "none",
+            "ActionBody": "none",
             "TextSize": "medium",
             "TextVAlign": "middle",
             "TextHAlign": "left"
@@ -247,18 +228,17 @@ var FlexMenu = {
             "Columns": 6,
             "Rows": 1,
             "ActionType": "reply",
-            "ActionBody": "https://www.google.com",
-            "Text": "<font color=#ffffff>Buy</font>",
+            "ActionBody": "Buy MicroPhone On-ear",
+            "Text": "<font color=#ffffff>Buy MicroPhone On-ear</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
-            "TextHAlign": "middle",
-            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
+            "TextHAlign": "middle"
         },
         {
             "Columns": 6,
             "Rows": 1,
             "ActionType": "reply",
-            "ActionBody": "https://www.google.com",
+            "ActionBody": "More Detial MicroPhone",
             "Text": "<font color=#8367db>MORE DETAILS</font>",
             "TextSize": "small",
             "TextVAlign": "middle",
@@ -267,16 +247,16 @@ var FlexMenu = {
         {
             "Columns": 6,
             "Rows": 3,
-            "ActionType": "open-url",
-            "ActionBody": "https://www.google.com",
+            "ActionType": "reply",
+            "ActionBody": "View More T-Shirt Picture",
             "Image": "http://demo.convergence.co.th:50003/viewUpload/336336Original.jpg"
         },
         {
             "Columns": 6,
             "Rows": 2,
             "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
-            "ActionType": "open-url",
-            "ActionBody": "https://www.google.com",
+            "ActionType": "none",
+            "ActionBody": "none",
             "TextSize": "medium",
             "TextVAlign": "middle",
             "TextHAlign": "left"
@@ -285,12 +265,11 @@ var FlexMenu = {
             "Columns": 6,
             "Rows": 1,
             "ActionType": "reply",
-            "ActionBody": "https://www.google.com",
-            "Text": "<font color=#ffffff>Buy</font>",
+            "ActionBody": "Buy Hanes Mens Humor Graphic T-Shirt",
+            "Text": "<font color=#ffffff>Buy Hanes Mens Humor Graphic T-Shirt</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
-            "TextHAlign": "middle",
-            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
+            "TextHAlign": "middle"
         },
         {
             "Columns": 6,
@@ -314,6 +293,319 @@ var FlexMenu = {
         }
     ]
 }
+var LoanMenu = {
+    "Type": "rich_media",
+    "ButtonsGroupColumns": 6,
+    "ButtonsGroupRows": 7,
+    "BgColor": "#FFFFFF",
+    "Buttons": [
+        {
+            "Columns": 6,
+            "Rows": 3,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 2,
+            "Text": "<font color=#323232><b>Loan List 1 </b></font><font color=#777777><br>No Fee , Begin At 1 May - 1 Oct 2019 </font><font color=#6fc133>2% interest per year</font>",
+            "ActionType": "none",
+            "ActionBody": "none",
+            "TextSize": "medium",
+            "TextVAlign": "middle",
+            "TextHAlign": "left"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "Get Loan List 1",
+            "Text": "<font color=#ffffff>Click</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle",
+            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "More Detail Loan List 1",
+            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "TextSize": "small",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 3,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "http://demo.convergence.co.th:50003/viewUpload/336336Original.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 2,
+            "Text": "<font color=#323232><b>Loan List 2</b></font><font color=#777777><br>No Fee No Guarantor Begin at Today  to 10 Oct 2019 </font><font color=#6fc133>8% interest per year</font>",
+            "ActionType": "none",
+            "ActionBody": "none",
+            "TextSize": "medium",
+            "TextVAlign": "middle",
+            "TextHAlign": "left"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "Get Loan List 2",
+            "Text": "<font color=#ffffff>Click</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle",
+            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "More Details Loan List 2",
+            "ActionBody": "https://www.google.com",
+            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "TextSize": "small",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Cancel",
+            "Text": "<font color=#8367db>Cancel</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        }
+    ]
+}
+var NewsList = {
+    "Type": "rich_media",
+    "ButtonsGroupColumns": 6,
+    "ButtonsGroupRows": 7,
+    "BgColor": "#FFFFFF",
+    "Buttons": [
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "News1",
+            "Text": "<font color=#8367db>News1</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "News2",
+            "Text": "<font color=#8367db>News2</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "News3",
+            "Text": "<font color=#8367db>News3</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Cancel",
+            "Text": "<font color=#8367db>Cancel</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        }
+    ]
+}
+
+var MicrophoneFlex = {
+    "Type": "rich_media",
+    "ButtonsGroupColumns": 6,
+    "ButtonsGroupRows": 7,
+    "BgColor": "#FFFFFF",
+    "Buttons": [
+        {
+            "Columns": 6,
+            "Rows": 3,
+            "ActionType": "reply",
+            "ActionBody": "View More Microphone Picture",
+            "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 2,
+            "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
+            "ActionType": "none",
+            "ActionBody": "none",
+            "TextSize": "medium",
+            "TextVAlign": "middle",
+            "TextHAlign": "left"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "Buy MicroPhone On-ear",
+            "Text": "<font color=#ffffff>Buy MicroPhone On-ear</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "Cancel",
+            "Text": "<font color=#8367db>Cancel</font>",
+            "TextSize": "small",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        }
+       
+    ]
+}
+
+
+var keyboard_Creadit_Limit = {
+    "Type": "keyboard",
+    "Revision": 1,
+    "Buttons": [
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "2000",
+            "Text": "<b>2000</b>",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "5000",
+            "Text": "<b>5000</b>",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "10000",
+            "Text": "<b>10000</b>",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "25000",
+            "Text": "<b>25000</b>",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "50000",
+            "Text": "<b>50000</b>",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Cancel",
+            "Text": "<b>Cancel</b>",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        }
+    ]
+};
+
+var Confirm = {
+    "Type": "keyboard",
+    "Revision": 1,
+    "Buttons": [
+        {
+            "Columns": 3,
+            "Rows": 2,
+            "BgColor": "#8cff8c",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Yes",
+            "Text": "Yes",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 3,
+            "Rows": 2,
+            "BgColor": "#ff6b6b",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "No",
+            "Text": "No",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 70,
+            "TextSize": "large"
+        }
+
+    ]
+};
+
+
+
+var CLkeysendback = new KeyboardMessage(keyboard_Creadit_Limit);
 
 app.post('/viber/webhooks', bot.middleware(), (req, res) => {
     const data = {
@@ -354,6 +646,12 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         mainkeySendback
                     ], mainkeytrack);
                 }
+                else if (msg.message.text == 'CheckPoint') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("Your Credit Point have 1985 Point."),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
                 else if (msg.message.text == 'MoreOption') {
                     
                     bot.sendMessage(userProfile, subkeysendback, mainkeytrack)
@@ -378,15 +676,41 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 }
                 else if (msg.message.text == 'Promotion') {
                     bot.sendMessage(userProfile, [
-                        new RichMediaMessage(FlexMenu)
+                        new RichMediaMessage(FlexMenu),
+                        new TextMessage("if you not interested promotion Click Cancel on the right hand side of Promotion list")
                     ], "FlexMenu");
                 }
                 else if (msg.message.text == 'Back') {
                     bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
                 }
+                else if (msg.message.text == 'report') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("This your Statement last 6 months"),
+                        new FileMessage("http://demo.convergence.co.th:50003/viewupload/sample.pdf", "3028", "sample.pdf"),
+                        mainkeySendback
+                    ], mainkeytrack);
+                } 
+                else if (msg.message.text == 'News') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage(NewsList),
+                        new TextMessage("if you not interested News Click Cancel on the right hand side of News list")
+                    ], "NewsMenu");
+                }
+                else if (msg.message.text == 'Request loan') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("Loan List"),
+                        new RichMediaMessage(LoanMenu),
+                        new TextMessage("if you not interested Loan Click Cancel on the right hand side of Loan list")
+                    ], "LoanMenu");
+                }
+                else if (msg.message.text == 'Change Credit Limit') {
+                    bot.sendMessage(userProfile, [
+                        CLkeysendback
+                    ],"CLkey");
+                }
                 else {
                     bot.sendMessage(userProfile, [
-                        new TextMessage("Sorry I don't understand "),
+                        new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
                         mainkeySendback
                     ], mainkeytrack);
                 }
@@ -394,19 +718,102 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
             }
             else if (msg.message.tracking_data == '"FlexMenu"') {
                 if (msg.message.text == 'Cancel') {
-                    console.log("Close Flex Menu")
+                    bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
+                }
+                else if (msg.message.text == 'More Detial MicroPhone') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage(MicrophoneFlex)
+                    ], "FlexMenu");
+                }
+                else if (msg.message.text == 'Buy MicroPhone On-ear') {
+                    bot.sendMessage(userProfile, [
+                        new StickerMessage("114409"),
+                        new StickerMessage("114406"),
+                        new TextMessage("Your Order ID : XXXXXXX "),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
+                else if (msg.message.text == 'Buy Hanes Mens Humor Graphic T-Shirt') {
+                    bot.sendMessage(userProfile, [
+                        new StickerMessage("114409"),
+                        new StickerMessage("114406"),
+                        new TextMessage("Your Order ID : XXXXXXX "),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
+                else {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("this product out of stock"),
+                        new TextMessage("Do you want to continue view Promotions ?"),
+                        new KeyboardMessage(Confirm)
+                    ],"Confirm_ViewPromotion");
+                }
+            }
+            else if (msg.message.tracking_data == '"LoanMenu"') {
+                if (msg.message.text == 'Cancel') {
                     bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
                 }
                 else {
                     bot.sendMessage(userProfile, [
-                        new TextMessage("Sorry I don't understand "),
+                        new TextMessage("This Offer is expired "),
                         mainkeySendback
                     ], mainkeytrack);
                 }
-            } 
+            }
+            else if (msg.message.tracking_data == '"CLkey"') {
+                if (msg.message.text == 'Cancel') {
+                    console.log("Close Loan Menu")
+                    bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
+                } else {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("System Will Change Your Creadit Limit to " + msg.message.text),
+                        new TextMessage(" Please wait a 10 minute if Creadit Limit is not change Please Contact Customer Service"),
+                        mainkeySendback
+                    ], mainkeytrack)
+                }
+            }
+            else if (msg.message.tracking_data == '"Confirm_ViewPromotion"') {
+                if (msg.message.text == 'Yes') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage(FlexMenu),
+                        new TextMessage("if you not interested promotion Click Cancel on the right hand side of Promotion list")
+                    ], "FlexMenu");
+                } else {
+                    bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
+                }
+            }
+            else if (msg.message.tracking_data == '"NewsMenu"') {
+                if (msg.message.text == 'Cancel') {
+                    bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
+                }
+                else if (msg.message.text == 'News1') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("This News1 Detail "),
+                        mainkeySendback
+                    ], mainkeytrack);
+                } 
+                else if (msg.message.text == 'News2') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("This News2 Detail "),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
+                else if (msg.message.text == 'News3') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("This News3 Detail "),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
+                else {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("This News is expired feed"),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
+            }
             else {
                 bot.sendMessage(userProfile, [
-                    new TextMessage("Sorry I don't understand "),
+                    new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
                     mainkeySendback
                 ], mainkeytrack);
             }
@@ -440,7 +847,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     console.log(msg)
                     console.log("++++++++++++++++++++++++++++++++++++")
                     bot.sendMessage(userProfile,[
-                            new TextMessage("Sorry , I Don't UnderStand This Word"),
+                            new TextMessage("Sorry , I Don't UnderStand This Word , Please Select Whant do you want in Menu"),
                             mainkeySendback
                     ], mainkeytrack);
                 }
@@ -451,7 +858,10 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
             }
             else {
                 console.log("Out of Message Type ")
-                bot.sendMessage(userProfile, new TextMessage("Sorry , I Don't UnderStand "));
+                bot.sendMessage(userProfile, [
+                    new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
+                    mainkeySendback
+                ], mainkeytrack);
             }
         }
 
@@ -459,7 +869,10 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
     else if (msg.event == 'conversation_started') {
         
         bot.getBotProfile().then(response => {
-            bot.sendMessage(userProfile, new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + " Write 'keyboard' For Open Menu"));
+            bot.sendMessage(userProfile, [
+                new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + "nice to meet you !!"),
+                mainkeySendback
+            ],mainkeytrack);
         });
     }
     else if (msg.event == 'subscribed') {

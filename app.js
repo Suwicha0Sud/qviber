@@ -57,51 +57,71 @@ var mainkey = {
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "http://demo.convergence.co.th:50003/viewUpload/wallet_111278Original.png",
+            "BgMedia": "https://cdn0.iconfinder.com/data/icons/shopping-and-ecommerce-15/512/sale_lineal_color_cnvrt-05-512.png",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Balance",
+            "Text": "<font color=#ffffff><b>BALANCE  </b></font>",
+            "TextVAlign": "bottom",
+            "TextHAlign": "center",
+            "TextOpacity": 100,
+            "TextSize": "large"
         },
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://cdn2.iconfinder.com/data/icons/modern-business-advertising-and-media-1/48/Modern_Business_newspaper_ads-512.png",
+            "BgMedia": "https://www.albertadoctors.org/images/ama-master/feature/Stock%20photos/News.jpg",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "News",
+            "Text": "News",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 0,
+            "TextSize": "large"
         },
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://cdn3.iconfinder.com/data/icons/business-vol-24/100/Artboard_12-512.png",
+            "BgMedia": "https://i.ytimg.com/vi/ZBKWqdAS7nA/maxresdefault.jpg",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Promotion",
+            "Text": "Promotion",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 0,
+            "TextSize": "large"
         },
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://cdn2.iconfinder.com/data/icons/reports-and-analytics-7/49/9-512.png",
+            "BgMedia": "https://icons-for-free.com/iconfiles/png/512/credit+card+debit+card+master+card+icon-1320184902602310693.png",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
-            "ActionBody": "report",
+            "ActionBody": "Credit",
+            "Text": "<b>Check Credit</b>",
+            "TextVAlign": "bottom",
+            "TextHAlign": "center",
+            "TextOpacity": 60,
+            "TextSize": "large"
         },
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://eyecarebusiness.ca/wp/wp-content/uploads/map.jpg",
+            "BgMedia": "https://lh3.googleusercontent.com/2bKwX9qCndnvSLbRv4ypPyaOKInKMFCq1rR2xa1t8gxG3YAKbGSrdU0VBSHHJTSr7F8",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "location",
-            "Text": "ATM Near Me",
+            "Text": "<font color=#ffffff><b>Near Me</b></font>",
             "TextVAlign": "middle",
             "TextHAlign": "center",
-            "TextOpacity": 80,
+            "TextOpacity": 100,
             "TextSize": "large"
         },
         {
@@ -112,7 +132,7 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "MoreOption",
-            "Text": "More Option",
+            "Text": "<b>More Option</b>",
             "TextVAlign": "bottom",
             "TextHAlign": "center",
             "TextOpacity": 60,
@@ -131,27 +151,29 @@ var subkey = {
         {
             "Columns": 2,
             "Rows": 2,
+            "BgMedia": "https://cdn.donorperfect.com/images/archive/reporting-analytics_60.png",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
-            "ActionBody": "Credit",
-            "Text": "Check Credit",
+            "ActionBody": "report",
+            "Text": "report",
             "TextVAlign": "middle",
             "TextHAlign": "center",
-            "TextOpacity": 60,
+            "TextOpacity": 0,
             "TextSize": "large"
         },
         {
             "Columns": 2,
             "Rows": 2,
+            "BgMedia": "https://cdn1.iconfinder.com/data/icons/money-color-set/24/Finantial_Care_2_money_color_c-512.png",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Request loan",
-            "Text": "Request a loan",
-            "TextVAlign": "middle",
+            "Text": "<b>Request a loan</b>",
+            "TextVAlign": "bottom",
             "TextHAlign": "center",
-            "TextOpacity": 70,
+            "TextOpacity": 100,
             "TextSize": "large"
         },
         {
@@ -174,7 +196,7 @@ var subkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "CheckPoint",
-            "Text": "Check Credit Point",
+            "Text": "Check Point",
             "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 60,
@@ -217,7 +239,7 @@ var FlexMenu = {
         {
             "Columns": 6,
             "Rows": 2,
-            "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
+            "Text": "<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>1799</font> Point",
             "ActionType": "none",
             "ActionBody": "none",
             "TextSize": "medium",
@@ -229,7 +251,7 @@ var FlexMenu = {
             "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "Buy MicroPhone On-ear",
-            "Text": "<font color=#ffffff>Buy MicroPhone On-ear</font>",
+            "Text": "<font color=#ffffff>Buy</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -254,7 +276,7 @@ var FlexMenu = {
         {
             "Columns": 6,
             "Rows": 2,
-            "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
+            "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>1099</font> Point",
             "ActionType": "none",
             "ActionBody": "none",
             "TextSize": "medium",
@@ -266,7 +288,7 @@ var FlexMenu = {
             "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "Buy Hanes Mens Humor Graphic T-Shirt",
-            "Text": "<font color=#ffffff>Buy Hanes Mens Humor Graphic T-Shirt</font>",
+            "Text": "<font color=#ffffff>Buy</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -275,7 +297,34 @@ var FlexMenu = {
             "Columns": 6,
             "Rows": 1,
             "ActionType": "reply",
-            "ActionBody": "https://www.google.com",
+            "ActionBody": "More Detail Hanes Mens",
+            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "TextSize": "small",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 5,
+            "ActionType": "reply",
+            "ActionBody": "View Picture",
+            "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "Buy Big image",
+            "Text": "<font color=#8367db>Buy</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "reply",
+            "ActionBody": "More Detail Big image",
             "Text": "<font color=#8367db>MORE DETAILS</font>",
             "TextSize": "small",
             "TextVAlign": "middle",
@@ -285,95 +334,8 @@ var FlexMenu = {
             "Columns": 6,
             "Rows": 7,
             "ActionType": "reply",
-            "ActionBody": "Cancel",
-            "Text": "<font color=#8367db>Cancel</font>",
-            "TextSize": "large",
-            "TextVAlign": "middle",
-            "TextHAlign": "middle"
-        }
-    ]
-}
-var LoanMenu = {
-    "Type": "rich_media",
-    "ButtonsGroupColumns": 6,
-    "ButtonsGroupRows": 7,
-    "BgColor": "#FFFFFF",
-    "Buttons": [
-        {
-            "Columns": 6,
-            "Rows": 3,
-            "ActionType": "none",
-            "ActionBody": "none",
+            "ActionBody": "View PictureOriginal",
             "Image": "http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg"
-        },
-        {
-            "Columns": 6,
-            "Rows": 2,
-            "Text": "<font color=#323232><b>Loan List 1 </b></font><font color=#777777><br>No Fee , Begin At 1 May - 1 Oct 2019 </font><font color=#6fc133>2% interest per year</font>",
-            "ActionType": "none",
-            "ActionBody": "none",
-            "TextSize": "medium",
-            "TextVAlign": "middle",
-            "TextHAlign": "left"
-        },
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "ActionType": "reply",
-            "ActionBody": "Get Loan List 1",
-            "Text": "<font color=#ffffff>Click</font>",
-            "TextSize": "large",
-            "TextVAlign": "middle",
-            "TextHAlign": "middle",
-            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
-        },
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "ActionType": "reply",
-            "ActionBody": "More Detail Loan List 1",
-            "Text": "<font color=#8367db>MORE DETAILS</font>",
-            "TextSize": "small",
-            "TextVAlign": "middle",
-            "TextHAlign": "middle"
-        },
-        {
-            "Columns": 6,
-            "Rows": 3,
-            "ActionType": "none",
-            "ActionBody": "none",
-            "Image": "http://demo.convergence.co.th:50003/viewUpload/336336Original.jpg"
-        },
-        {
-            "Columns": 6,
-            "Rows": 2,
-            "Text": "<font color=#323232><b>Loan List 2</b></font><font color=#777777><br>No Fee No Guarantor Begin at Today  to 10 Oct 2019 </font><font color=#6fc133>8% interest per year</font>",
-            "ActionType": "none",
-            "ActionBody": "none",
-            "TextSize": "medium",
-            "TextVAlign": "middle",
-            "TextHAlign": "left"
-        },
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "ActionType": "reply",
-            "ActionBody": "Get Loan List 2",
-            "Text": "<font color=#ffffff>Click</font>",
-            "TextSize": "large",
-            "TextVAlign": "middle",
-            "TextHAlign": "middle",
-            "Image": "https://s14.postimg.org/4mmt4rw1t/Button.png"
-        },
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "ActionType": "More Details Loan List 2",
-            "ActionBody": "https://www.google.com",
-            "Text": "<font color=#8367db>MORE DETAILS</font>",
-            "TextSize": "small",
-            "TextVAlign": "middle",
-            "TextHAlign": "middle"
         },
         {
             "Columns": 6,
@@ -419,6 +381,54 @@ var NewsList = {
             "ActionType": "reply",
             "ActionBody": "News3",
             "Text": "<font color=#8367db>News3</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Cancel",
+            "Text": "<font color=#8367db>Cancel</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        }
+    ]
+}
+var LoanList = {
+    "Type": "rich_media",
+    "ButtonsGroupColumns": 6,
+    "ButtonsGroupRows": 7,
+    "BgColor": "#FFFFFF",
+    "Buttons": [
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Loan1",
+            "Text": "<font color=#8367db>Loan1</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Loan2",
+            "Text": "<font color=#8367db>Loan2</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 7,
+            "ActionType": "reply",
+            "ActionBody": "Loan3",
+            "Text": "<font color=#8367db>Loan3</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -663,10 +673,10 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     ],"keyboard Menu");
                 }
                 else if (msg.message.type == 'location') {
-                    console.log("user location : " , msg.message.location);
+                    console.log("user location : ", msg.message.location);
                     //Send 
                     //match location nearest find one
-                    const msgsendback = new LocationMessage(13.8142509, 100.5408628);
+                    const msgsendback = new LocationMessage(msg.message.location.lat + 0.000005, msg.message.location.lon + 0.000005);
                     bot.sendMessage(userProfile, [
                         new TextMessage("this ATM nearest to you"),
                         msgsendback,
@@ -698,13 +708,13 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 }
                 else if (msg.message.text == 'Request loan') {
                     bot.sendMessage(userProfile, [
-                        new TextMessage("Loan List"),
-                        new RichMediaMessage(LoanMenu),
+                        new RichMediaMessage(LoanList),
                         new TextMessage("if you not interested Loan Click Cancel on the right hand side of Loan list")
                     ], "LoanMenu");
                 }
                 else if (msg.message.text == 'Change Credit Limit') {
                     bot.sendMessage(userProfile, [
+                        new TextMessage("if you want to another amount Please input number Only"),
                         CLkeysendback
                     ],"CLkey");
                 }
@@ -713,7 +723,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
                         mainkeySendback
                     ], mainkeytrack);
-                }
+                } 
                 // msgsendback
             }
             else if (msg.message.tracking_data == '"FlexMenu"') {
@@ -730,6 +740,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new StickerMessage("114409"),
                         new StickerMessage("114406"),
                         new TextMessage("Your Order ID : XXXXXXX "),
+                        new TextMessage("Your Balance Remaining 500 Point"),
                         mainkeySendback
                     ], mainkeytrack);
                 }
@@ -738,8 +749,14 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new StickerMessage("114409"),
                         new StickerMessage("114406"),
                         new TextMessage("Your Order ID : XXXXXXX "),
+                        new TextMessage("Your Balance Remaining 500 Point"),
                         mainkeySendback
                     ], mainkeytrack);
+                }
+                else if (msg.message.text == 'View More Microphone Picture') {
+                    bot.sendMessage(userProfile, [
+                        new PictureMessage("http://demo.convergence.co.th:50003/viewUpload/10348376529750Original.jpg")
+                    ], "FlexMenu")
                 }
                 else {
                     bot.sendMessage(userProfile, [
@@ -753,6 +770,68 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 if (msg.message.text == 'Cancel') {
                     bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
                 }
+                else if (msg.message.text == 'Loan1') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage({
+                            "Type": "rich_media",
+                            "ButtonsGroupColumns": 6,
+                            "ButtonsGroupRows": 7,
+                            "BgColor": "#FFFFFF",
+                            "Buttons": [
+                                {
+                                    "Columns": 6,
+                                    "Rows": 1,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color=#8367db>Loan1 Hearder</font>",
+                                    "TextSize": "large",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 2,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color=#8367db>Image</font>",
+                                    "TextSize": "large",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 3,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color=#8367db>Detail</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 1,
+                                    "ActionType": "reply",
+                                    "ActionBody": "View Another Loan",
+                                    "Text": "<font color=#8367db>View Another Loan</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 7,
+                                    "ActionType": "reply",
+                                    "ActionBody": "Cancel",
+                                    "Text": "<font color=#8367db>Cancel</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                }
+                            ]
+                        })
+                    ], "ViewLoan");
+                }
                 else {
                     bot.sendMessage(userProfile, [
                         new TextMessage("This Offer is expired "),
@@ -765,11 +844,20 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     console.log("Close Loan Menu")
                     bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
                 } else {
+                    if ((msg.message.text - 100).toString() == "NaN") {
+                        bot.sendMessage(userProfile, [
+                            new TextMessage("Your value is not number , Please input number Only!"),
+                            CLkeysendback
+                        ], "CLkey")
+                    }
+                    else {
                     bot.sendMessage(userProfile, [
                         new TextMessage("System Will Change Your Creadit Limit to " + msg.message.text),
                         new TextMessage(" Please wait a 10 minute if Creadit Limit is not change Please Contact Customer Service"),
                         mainkeySendback
                     ], mainkeytrack)
+                    }
+
                 }
             }
             else if (msg.message.tracking_data == '"Confirm_ViewPromotion"') {
@@ -807,6 +895,19 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 else {
                     bot.sendMessage(userProfile, [
                         new TextMessage("This News is expired feed"),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
+            }
+            else if (msg.message.tracking_data == '"ViewLoan"') {
+                if (msg.message.text == 'View Another Loan') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage(LoanList),
+                        new TextMessage("if you not interested Loan Click Cancel on the right hand side of Loan list")
+                    ], "LoanMenu");
+                }
+                else if (msg.message.text == 'Cancel') {
+                    bot.sendMessage(userProfile, [
                         mainkeySendback
                     ], mainkeytrack);
                 }
@@ -871,6 +972,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
         bot.getBotProfile().then(response => {
             bot.sendMessage(userProfile, [
                 new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + "nice to meet you !!"),
+                new TextMessage("Please select what do you want in menu"),
                 mainkeySendback
             ],mainkeytrack);
         });

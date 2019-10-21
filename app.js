@@ -71,22 +71,22 @@ var mainkey = {
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://www.albertadoctors.org/images/ama-master/feature/Stock%20photos/News.jpg",
+            "BgMedia":"http://cdn.dezzain.com/1/2018/05/exchange-rates-tips-guides.jpg",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
-            "ActionBody": "News",
-            "Text": "News",
-            "TextVAlign": "middle",
+            "ActionBody": "Exchange Rate",
+            "Text": "<font color=#ffffff><b>Exchange Rate</b></font>",
+            "TextVAlign": "bottom",
             "TextHAlign": "center",
-            "TextOpacity": 0,
+            "TextOpacity": 100,
             "TextSize": "large"
         },
         {
             "Columns": 2,
             "Rows": 2,
             "BgMedia": "https://i.ytimg.com/vi/ZBKWqdAS7nA/maxresdefault.jpg",
-            "BgColor": "#fafafa",
+            "BgColor": "#b0b8ff",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Promotion",
@@ -118,10 +118,10 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "location",
-            "Text": "<font color=#ffffff><b>Near Me</b></font>",
+            "Text": "<font color=#ffffff><b>ATM Near Me</b></font>",
             "TextVAlign": "middle",
             "TextHAlign": "center",
-            "TextOpacity": 100,
+            "TextOpacity": 0,
             "TextSize": "large"
         },
         {
@@ -151,12 +151,12 @@ var subkey = {
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://cdn.donorperfect.com/images/archive/reporting-analytics_60.png",
+            "BgMedia": "https://www.albertadoctors.org/images/ama-master/feature/Stock%20photos/News.jpg",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
-            "ActionBody": "report",
-            "Text": "report",
+            "ActionBody": "News",
+            "Text": "News",
             "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 0,
@@ -187,6 +187,20 @@ var subkey = {
             "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 60,
+            "TextSize": "large"
+        },
+        {
+            "Columns": 2,
+            "Rows": 2,
+            "BgMedia": "https://cdn.donorperfect.com/images/archive/reporting-analytics_60.png",
+            "BgColor": "#fafafa",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "report",
+            "Text": "report",
+            "TextVAlign": "middle",
+            "TextHAlign": "center",
+            "TextOpacity": 0,
             "TextSize": "large"
         },
         {
@@ -613,6 +627,54 @@ var Confirm = {
     ]
 };
 
+var ExchangeRateList = {
+    "Type": "rich_media",
+    "ButtonsGroupColumns": 6,
+    "ButtonsGroupRows": 5,
+    "BgColor": "#FFFFFF",
+    "Buttons": [
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Text": "<font color=#8367db>Dollar to Bath</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 4,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Text": "<font> 1 $ = 30.33 Bath </font><br><br><b>Buy rate</b> 1 $ = 29.70 Bath <br><b> Sell rate </b> 31.30 Bath = 1 $ ",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Text": "<font color=#8367db>Dollar to Euro</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 4,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Text": "<font> 1 $ = 0.90 Euro </font><br><br><b>Buy rate</b> 1 $ = 0.85 Euro <br><b> Sell rate </b> 0.95 Euro = 1 $ ",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        }
+    ]
+}
 
 
 var CLkeysendback = new KeyboardMessage(keyboard_Creadit_Limit);
@@ -717,6 +779,17 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new TextMessage("if you want to another amount Please input number Only"),
                         CLkeysendback
                     ],"CLkey");
+                }
+                else if (msg.message.text == 'Exchange Rate') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage(ExchangeRateList),
+                        mainkeySendback
+                    ], mainkeytrack)
+                }
+                else if (msg.message.text.search('help') != -1) {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage('Please Select in Menu')
+                    ], mainkeytrack)
                 }
                 else {
                     bot.sendMessage(userProfile, [
@@ -866,7 +939,8 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new RichMediaMessage(FlexMenu),
                         new TextMessage("if you not interested promotion Click Cancel on the right hand side of Promotion list")
                     ], "FlexMenu");
-                } else {
+                }
+                else {
                     bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
                 }
             }
@@ -927,13 +1001,13 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 msgtext = msgtext.toLowerCase();
                 if (msgtext == "hi" || msgtext == "hey") {
                     bot.getBotProfile().then(response => {
-                        bot.sendMessage(userProfile, new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + " Write 'keyboard' For Open Menu"));
+                        bot.sendMessage(userProfile, new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + " Write 'menu' For Open Menu"));
                     });
                 }              
                 else if (msgtext.search('help') != -1) {
-                    bot.sendMessage(userProfile, new TextMessage("What do you want ? "));
+                    bot.sendMessage(userProfile, new TextMessage("write 'menu' to open menu"));
                 }
-                else if (msgtext.search("keyboard") != -1 ) {
+                else if (msgtext.search("menu") != -1 ) {
                     bot.sendMessage(userProfile, mainkeySendback, mainkeytrack)
                 }
                 else if (msgtext.search("location") != -1) {
@@ -967,7 +1041,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
         }
 
     }
-    else if (msg.event == 'conversation_started') {
+    if (msg.event == 'conversation_started') {
         
         bot.getBotProfile().then(response => {
             bot.sendMessage(userProfile, [
@@ -977,8 +1051,12 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
             ],mainkeytrack);
         });
     }
-    else if (msg.event == 'subscribed') {
+    if (msg.event == 'subscribed') {
             bot.sendMessage(userProfile, new TextMessage("Thank you For Subscribed"))
+    }
+    if (msg.event == 'unsubscribed') {
+        console.log("Unsubscribed by ", userProfile);
+        //can add log to keep data
     }
 });
 
@@ -990,3 +1068,9 @@ https.createServer(httpsOptions, app ).listen(port, () => {
         console.log(err)
     });
 });
+
+
+// user For check user status input user_id 
+//    bot.getOnlineStatus(["RRPAuMZh4qlhlsQeZ/QvvA=="]).then(status => {
+//      console.log(status)
+//    });

@@ -62,8 +62,8 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Balance",
-            "Text": "<font color=#ffffff><b>BALANCE  </b></font>",
-            "TextVAlign": "bottom",
+            "Text": "<font color='#000000'><b>BALANCE\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0</b></font>",
+            "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 100,
             "TextSize": "large"
@@ -76,7 +76,7 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Exchange Rate",
-            "Text": "<font color=#ffffff><b>Exchange Rate</b></font>",
+            "Text": "<font color='#ffffff'><b>Exchange Rate</b></font>",
             "TextVAlign": "bottom",
             "TextHAlign": "center",
             "TextOpacity": 100,
@@ -118,7 +118,7 @@ var mainkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "location",
-            "Text": "<font color=#ffffff><b>ATM Near Me</b></font>",
+            "Text": "<font color='#ffffff'><b>ATM Near Me</b></font>",
             "TextVAlign": "middle",
             "TextHAlign": "center",
             "TextOpacity": 0,
@@ -206,14 +206,15 @@ var subkey = {
         {
             "Columns": 2,
             "Rows": 2,
+            "BgMedia":"https://cdn1.iconfinder.com/data/icons/scrum-methodology-1/512/story_point-512.png",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "CheckPoint",
             "Text": "Check Point",
-            "TextVAlign": "middle",
+            "TextVAlign": "bottom",
             "TextHAlign": "center",
-            "TextOpacity": 60,
+            "TextOpacity": 100,
             "TextSize": "large"
         },
         {
@@ -230,7 +231,6 @@ var subkey = {
             "TextOpacity": 60,
             "TextSize": "large"
         }
-
     ]
 };
 var subkeysendback = new KeyboardMessage(subkey);
@@ -265,7 +265,7 @@ var FlexMenu = {
             "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "Buy MicroPhone On-ear",
-            "Text": "<font color=#ffffff>Buy</font>",
+            "Text": "<font color='#ffffff'>Buy</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -275,7 +275,7 @@ var FlexMenu = {
             "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "More Detial MicroPhone",
-            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "Text": "<font color='#8367db'>MORE DETAILS</font>",
             "TextSize": "small",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -290,7 +290,7 @@ var FlexMenu = {
         {
             "Columns": 6,
             "Rows": 2,
-            "Text": "<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>1099</font> Point",
+            "Text": "<font color='#323232'><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color='#777777'><br>Hanes</font><font color=#6fc133>1099</font> Point",
             "ActionType": "none",
             "ActionBody": "none",
             "TextSize": "medium",
@@ -329,7 +329,7 @@ var FlexMenu = {
             "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "Buy Big image",
-            "Text": "<font color=#8367db>Buy</font>",
+            "Text": "<font color='#8367db'>Buy</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -339,7 +339,7 @@ var FlexMenu = {
             "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "More Detail Big image",
-            "Text": "<font color=#8367db>MORE DETAILS</font>",
+            "Text": "<font color='#8367db'>MORE DETAILS</font>",
             "TextSize": "small",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -356,7 +356,7 @@ var FlexMenu = {
             "Rows": 7,
             "ActionType": "reply",
             "ActionBody": "Cancel",
-            "Text": "<font color=#8367db>Cancel</font>",
+            "Text": "<font color='#8367db'>Cancel</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -638,7 +638,7 @@ var ExchangeRateList = {
             "Rows": 1,
             "ActionType": "none",
             "ActionBody": "none",
-            "Text": "<font color=#8367db>Dollar to Bath</font>",
+            "Text": "<font color='#8367db'>Dollar to Bath</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -658,7 +658,7 @@ var ExchangeRateList = {
             "Rows": 1,
             "ActionType": "none",
             "ActionBody": "none",
-            "Text": "<font color=#8367db>Dollar to Euro</font>",
+            "Text": "<font color='#8367db'>Dollar to Euro</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -725,14 +725,14 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     ], mainkeytrack);
                 }
                 else if (msg.message.text == 'MoreOption') {
-                    
+
                     bot.sendMessage(userProfile, subkeysendback, mainkeytrack)
 
-                } 
+                }
                 else if (msg.message.text == 'location') {
                     bot.sendMessage(userProfile, [
                         new TextMessage("Please Send your Location")
-                    ],"keyboard Menu");
+                    ], "keyboard Menu");
                 }
                 else if (msg.message.type == 'location') {
                     console.log("user location : ", msg.message.location);
@@ -761,7 +761,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new FileMessage("http://demo.convergence.co.th:50003/viewupload/sample.pdf", "3028", "sample.pdf"),
                         mainkeySendback
                     ], mainkeytrack);
-                } 
+                }
                 else if (msg.message.text == 'News') {
                     bot.sendMessage(userProfile, [
                         new RichMediaMessage(NewsList),
@@ -778,7 +778,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                     bot.sendMessage(userProfile, [
                         new TextMessage("if you want to another amount Please input number Only"),
                         CLkeysendback
-                    ],"CLkey");
+                    ], "CLkey");
                 }
                 else if (msg.message.text == 'Exchange Rate') {
                     bot.sendMessage(userProfile, [
@@ -791,9 +791,15 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         new TextMessage('Please Select in Menu')
                     ], mainkeytrack)
                 }
+                else if (msg.message.text == 'menu' || msg.message.text == 'Menu') {
+                    bot.sendMessage(userProfile, [
+                        new TextMessage("This Main Menu you can select What do you want "),
+                        mainkeySendback
+                    ], mainkeytrack);
+                }
                 else {
                     bot.sendMessage(userProfile, [
-                        new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
+                        new TextMessage("Please Select What do you want in Menu"),
                         mainkeySendback
                     ], mainkeytrack);
                 } 
@@ -856,7 +862,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                                     "Rows": 1,
                                     "ActionType": "none",
                                     "ActionBody": "none",
-                                    "Text": "<font color=#8367db>Loan1 Hearder</font>",
+                                    "Text": "<font color='#8367db'>Loan1 Hearder</font>",
                                     "TextSize": "large",
                                     "TextVAlign": "middle",
                                     "TextHAlign": "middle"
@@ -866,7 +872,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                                     "Rows": 2,
                                     "ActionType": "none",
                                     "ActionBody": "none",
-                                    "Text": "<font color=#8367db>Image</font>",
+                                    "Text": "<font color='#8367db'>Image</font>",
                                     "TextSize": "large",
                                     "TextVAlign": "middle",
                                     "TextHAlign": "middle"
@@ -876,7 +882,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                                     "Rows": 3,
                                     "ActionType": "none",
                                     "ActionBody": "none",
-                                    "Text": "<font color=#8367db>Detail</font>",
+                                    "Text": "<font color='#8367db'>Detail</font>",
                                     "TextSize": "small",
                                     "TextVAlign": "middle",
                                     "TextHAlign": "middle"
@@ -886,7 +892,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                                     "Rows": 1,
                                     "ActionType": "reply",
                                     "ActionBody": "View Another Loan",
-                                    "Text": "<font color=#8367db>View Another Loan</font>",
+                                    "Text": "<font color='#8367db'>View Another Loan</font>",
                                     "TextSize": "small",
                                     "TextVAlign": "middle",
                                     "TextHAlign": "middle"
@@ -896,7 +902,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                                     "Rows": 7,
                                     "ActionType": "reply",
                                     "ActionBody": "Cancel",
-                                    "Text": "<font color=#8367db>Cancel</font>",
+                                    "Text": "<font color='#8367db'>Cancel</font>",
                                     "TextSize": "small",
                                     "TextVAlign": "middle",
                                     "TextHAlign": "middle"
@@ -988,7 +994,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
             }
             else {
                 bot.sendMessage(userProfile, [
-                    new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
+                    new TextMessage("Please Select What do you want in Menu"),
                     mainkeySendback
                 ], mainkeytrack);
             }
@@ -1034,7 +1040,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
             else {
                 console.log("Out of Message Type ")
                 bot.sendMessage(userProfile, [
-                    new TextMessage("Sorry I don't understand,Please Select What do you want in Menu"),
+                    new TextMessage("Please Select What do you want in Menu"),
                     mainkeySendback
                 ], mainkeytrack);
             }
@@ -1052,11 +1058,19 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
         });
     }
     if (msg.event == 'subscribed') {
-            bot.sendMessage(userProfile, new TextMessage("Thank you For Subscribed"))
+        bot.sendMessage(msg.user, [
+            new TextMessage("Thank you For Subscribed"),
+            new TextMessage("Please Select what do you want in menu "),
+            mainkeySendback
+        ],mainkeytrack)
     }
     if (msg.event == 'unsubscribed') {
-        console.log("Unsubscribed by ", userProfile);
+        console.log("Unsubscribed by ", msg);
         //can add log to keep data
+    }
+    if (msg.event == 'seen') {
+        console.log("User id : " + msg.user_id + " Seen Last Message");
+        //Add log Seen msg timestamp or update db seend msg
     }
 });
 

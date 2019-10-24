@@ -165,12 +165,12 @@ var subkey = {
         {
             "Columns": 2,
             "Rows": 2,
-            "BgMedia": "https://cdn1.iconfinder.com/data/icons/money-color-set/24/Finantial_Care_2_money_color_c-512.png",
+            "BgMedia": "https://www.g-able.com/engine/wp-content/uploads/2017/03/money-1.jpg",
             "BgColor": "#fafafa",
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "Request loan",
-            "Text": "<b>Request a loan</b>",
+            "Text": "<font color='#ffffff'><b>Request a loan</b></font>",
             "TextVAlign": "bottom",
             "TextHAlign": "center",
             "TextOpacity": 100,
@@ -211,7 +211,7 @@ var subkey = {
             "BgLoop": true,
             "ActionType": "reply",
             "ActionBody": "CheckPoint",
-            "Text": "Check Point",
+            "Text": "<b>Check Point</b>",
             "TextVAlign": "bottom",
             "TextHAlign": "center",
             "TextOpacity": 100,
@@ -371,30 +371,71 @@ var NewsList = {
     "Buttons": [
         {
             "Columns": 6,
-            "Rows": 7,
+            "Rows": 6,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "https://www.mangozero.com/wp-content/uploads/2018/12/aw-p-sam-topinternational-news-12.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.mangozero.com/10-international-news-2018/",
+            "Text": "<font color=#8367db>Open Web </font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 5,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "https://www.mangozero.com/wp-content/uploads/2018/12/aw-p-sam-topinternational-news-12.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
             "ActionType": "reply",
             "ActionBody": "News1",
-            "Text": "<font color=#8367db>News1</font>",
+            "Text": "<font color=#8367db>Detail</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
         },
         {
             "Columns": 6,
-            "Rows": 7,
-            "ActionType": "reply",
-            "ActionBody": "News2",
-            "Text": "<font color=#8367db>News2</font>",
+            "Rows": 1,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.mangozero.com/10-international-news-2018/",
+            "Text": "<font color=#8367db>Open Web</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
         },
         {
             "Columns": 6,
-            "Rows": 7,
-            "ActionType": "reply",
-            "ActionBody": "News3",
-            "Text": "<font color=#8367db>News3</font>",
+            "Rows": 1,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Text": "<font color=#000000><b>Greta Thunberg</b></font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 5,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "https://www.mangozero.com/wp-content/uploads/2018/12/aw-p-sam-topinternational-news-12.jpg"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.mangozero.com/10-international-news-2018/",
+            "Text": "<font color=#8367db>Open Web</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -419,30 +460,71 @@ var LoanList = {
     "Buttons": [
         {
             "Columns": 6,
-            "Rows": 7,
-            "ActionType": "reply",
-            "ActionBody": "Loan1",
-            "Text": "<font color=#8367db>Loan1</font>",
+            "Rows": 6,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "https://www.checkraka.com/uploaded/article/news/1372926/scb_speedyloan_top1.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.checkraka.com/news/personal-loan/1512908/",
+            "Text": "<font color=#8367db>Open Web </font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
         },
         {
             "Columns": 6,
-            "Rows": 7,
+            "Rows": 5,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "https://www.checkraka.com/uploaded/article/news/1372926/scb_speedyloan_top1.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
             "ActionType": "reply",
-            "ActionBody": "Loan2",
-            "Text": "<font color=#8367db>Loan2</font>",
+            "ActionBody": "News1",
+            "Text": "<font color=#8367db>Detail</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
         },
         {
             "Columns": 6,
-            "Rows": 7,
-            "ActionType": "reply",
-            "ActionBody": "Loan3",
-            "Text": "<font color=#8367db>Loan3</font>",
+            "Rows": 1,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.checkraka.com/news/personal-loan/1512908/",
+            "Text": "<font color=#8367db>Open Web</font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Text": "<font color=#000000><b>Personal Loan</b></font>",
+            "TextSize": "large",
+            "TextVAlign": "middle",
+            "TextHAlign": "middle"
+        },
+        {
+            "Columns": 6,
+            "Rows": 5,
+            "ActionType": "none",
+            "ActionBody": "none",
+            "Image": "https://www.checkraka.com/uploaded/article/news/1372926/scb_speedyloan_top1.png"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "ActionType": "open-url",
+            "ActionBody": "https://www.checkraka.com/news/personal-loan/1512908/",
+            "Text": "<font color=#8367db>Open Web</font>",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -911,6 +993,130 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                         })
                     ], "ViewLoan");
                 }
+                else if (msg.message.text == 'Loan2') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage({
+                            "Type": "rich_media",
+                            "ButtonsGroupColumns": 6,
+                            "ButtonsGroupRows": 7,
+                            "BgColor": "#FFFFFF",
+                            "Buttons": [
+                                {
+                                    "Columns": 6,
+                                    "Rows": 1,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color='#8367db'>Loan2 Hearder</font>",
+                                    "TextSize": "large",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 2,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color='#8367db'>Image</font>",
+                                    "TextSize": "large",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 3,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color='#8367db'>Detail</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 1,
+                                    "ActionType": "reply",
+                                    "ActionBody": "View Another Loan",
+                                    "Text": "<font color='#8367db'>View Another Loan</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 7,
+                                    "ActionType": "reply",
+                                    "ActionBody": "Cancel",
+                                    "Text": "<font color='#8367db'>Cancel</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                }
+                            ]
+                        })
+                    ], "ViewLoan");
+                }
+                else if (msg.message.text == 'Loan3') {
+                    bot.sendMessage(userProfile, [
+                        new RichMediaMessage({
+                            "Type": "rich_media",
+                            "ButtonsGroupColumns": 6,
+                            "ButtonsGroupRows": 7,
+                            "BgColor": "#FFFFFF",
+                            "Buttons": [
+                                {
+                                    "Columns": 6,
+                                    "Rows": 1,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color='#8367db'>Loan3 Hearder</font>",
+                                    "TextSize": "large",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 2,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color='#8367db'>Image</font>",
+                                    "TextSize": "large",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 3,
+                                    "ActionType": "none",
+                                    "ActionBody": "none",
+                                    "Text": "<font color='#8367db'>Detail</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 1,
+                                    "ActionType": "reply",
+                                    "ActionBody": "View Another Loan",
+                                    "Text": "<font color='#8367db'>View Another Loan</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                },
+                                {
+                                    "Columns": 6,
+                                    "Rows": 7,
+                                    "ActionType": "reply",
+                                    "ActionBody": "Cancel",
+                                    "Text": "<font color='#8367db'>Cancel</font>",
+                                    "TextSize": "small",
+                                    "TextVAlign": "middle",
+                                    "TextHAlign": "middle"
+                                }
+                            ]
+                        })
+                    ], "ViewLoan");
+                }
                 else {
                     bot.sendMessage(userProfile, [
                         new TextMessage("This Offer is expired "),
@@ -969,12 +1175,6 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
                 else if (msg.message.text == 'News3') {
                     bot.sendMessage(userProfile, [
                         new TextMessage("This News3 Detail "),
-                        mainkeySendback
-                    ], mainkeytrack);
-                }
-                else {
-                    bot.sendMessage(userProfile, [
-                        new TextMessage("This News is expired feed"),
                         mainkeySendback
                     ], mainkeytrack);
                 }

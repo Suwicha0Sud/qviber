@@ -648,7 +648,7 @@ var ExchangeRateList = {
             "Rows": 4,
             "ActionType": "none",
             "ActionBody": "none",
-            "Text": "<font> 1 $ = 30.33 Bath </font><br><br><b>Buy rate</b> 1 $ = 29.70 Bath <br><b> Sell rate </b> 31.30 Bath = 1 $ ",
+            "Text": " 1 $ = 30.28 Bath <br><br><b>Buy rate</b> 1 $ = 29.70 Bath <br><b> Sell rate </b> 31.30 Bath = 1 $ ",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"
@@ -668,7 +668,7 @@ var ExchangeRateList = {
             "Rows": 4,
             "ActionType": "none",
             "ActionBody": "none",
-            "Text": "<font> 1 $ = 0.90 Euro </font><br><br><b>Buy rate</b> 1 $ = 0.85 Euro <br><b> Sell rate </b> 0.95 Euro = 1 $ ",
+            "Text": " 1 $ = 0.90 Euro <br><br><b>Buy rate</b> 1 $ = 0.85 Euro <br><b> Sell rate </b> 0.95 Euro = 1 $ ",
             "TextSize": "large",
             "TextVAlign": "middle",
             "TextHAlign": "middle"

@@ -11,6 +11,7 @@ var app = express();
 
 
 const ViberBot = require('viber-bot').Bot;
+const ViberBot2 = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 
 const bot = new ViberBot({
@@ -18,6 +19,13 @@ const bot = new ViberBot({
     name: "qViber",
     avatar: "https://dl-media.viber.com/1/share/2/long/vibes/icon/image/0x0/b8b9/1f8182e24008fa84821087556a9cd995716df3c454afd8e816866b73f083b8b9.jpg" // It is recommended to be 720x720, and no more than 100kb.
 });
+
+const bot2 = new ViberBot2({
+    authToken: "4a912263e127d685-edd4e18539bf8db6-609837e59fd0981",
+    name: "qViber",
+    avatar: "https://dl-media.viber.com/1/share/2/long/vibes/icon/image/0x0/1e03/a73af3648d978dfa1f5229edec07f56cb6eb0ed191ae70d4db01756ae0f11e03.jpg" // It is recommended to be 720x720, and no more than 100kb.
+});
+
 
 // Wasn't that easy? Let's create HTTPS server and set the webhook:
 const https = require('https');
@@ -29,6 +37,7 @@ app.set('port', (process.env.PORT || '0.0.0.0', 62000));
 
 // Viber will push messages sent to this URL. Web server should be internet-facing.
 const webhookUrl = "https://demo.convergence.co.th:62000/viber/webhooks";
+const webhookUrl2 = "https://demo.convergence.co.th:62000/viber/webhooks2";
 
 
 const httpsOptions = {
@@ -761,6 +770,161 @@ var ExchangeRateList = {
 
 var CLkeysendback = new KeyboardMessage(keyboard_Creadit_Limit);
 
+app.post('/viber/webhooks2', bot2.middleware(), (req, res) => {
+    const data = {
+        "status": 0,
+        "status_message": "ok",
+        "event_types": [
+            "delivered",
+            "seen",
+            "failed",
+            "subscribed",
+            "unsubscribed",
+            "conversation_started"
+        ]
+    };
+    res.send(data)
+    const msg = JSON.parse(req.body);
+    console.log("=========================")
+    console.log(msg)
+    console.log("=========================")
+    var userProfile = msg.sender;
+    //UserProfile : Sender Message Create For Reply
+    if (msg.event == 'message') {
+
+        if (msg.message.tracking_data != '""') {
+            if (msg.message.tracking_data == '"CheckFlight"') {
+                //bot2.sendMessage(userProfile, new TextMessage("This your Flight Detail :"));
+                var FlightID = msg.message.text
+                var Status = "Ready"
+                if (Status == "Delay") {
+                    Status = "<font color='#a83232'>" + "Delay" + "</font>"
+                }
+                else if (Status == "Ready") {            
+                    Status = "<font color='#38f548'>" + "Ready" + "</font>"
+                }
+                var Header = "Flight ID : <b>" + FlightID + "</b>   "
+                var Body =  "Date   : <b>" +"18 November 2019"+"</b><br><br>"
+                    Body += "From   : <b>" + "Thailand" + "</b><br>"
+                    Body += "To     : <b>" + " UK " + "</b><br><br>"
+                    Body += "Depart : <b>" + " 09:05" + "</b>      " + "Arrive : <b>" + " 20:10" + "</b>"
+                var APIFlex = {
+                    "Type": "rich_media",
+                    "ButtonsGroupColumns": 6,
+                    "ButtonsGroupRows": 6,
+                    "BgColor": "#FFFFFF",
+                    "Buttons": [
+                        {
+                            "Columns": 4,
+                            "Rows": 1,
+                            "Text": Header,
+                            "BgColor": "#ffffff",
+                            "ActionType": "none",
+                            "ActionBody": "none",
+                            "TextSize": "large",
+                            "TextVAlign": "bottom",
+                            "TextHAlign": "left"
+                        },{
+                            "Columns": 2,
+                            "Rows": 1,
+                            //"Image":"https://image.flaticon.com/icons/png/512/3/3850.png",
+                            "Text": Status,
+                            "BgColor": "#ffffff",
+                            "ActionType": "none",
+                            "ActionBody": "none",
+                            "TextSize": "large",
+                            "TextVAlign": "middle",
+                            "TextHAlign": "left"
+                        }, 
+                        {
+                            "Columns": 6,
+                            "Rows": 4,
+                            "Text": Body,
+                            "BgColor": "#ffffff",
+                            "ActionType": "none",
+                            "ActionBody": "none",
+                            "TextSize": "medium",
+                            "TextVAlign": "middle",
+                            "TextHAlign": "left"
+                        },
+                        {
+                            "Columns": 6,
+                            "Rows": 1,
+                            "Text": "<font color='#8367db'>Contact +66 99 999 9999 </font>",
+                            "BgColor":"#cfd9ff",
+                            "ActionType": "none",
+                            "ActionBody": "none",
+                            "TextSize": "medium",
+                            "TextVAlign": "middle",
+                            "TextHAlign": "center"
+                        }
+                    ]
+                }
+
+                bot2.sendMessage(userProfile, new RichMediaMessage(APIFlex))
+
+            }
+
+        }
+        else {
+            if (msg.message.type == 'text') {
+                var msgtext = msg.message.text
+                msgtext = msgtext.toLowerCase();
+                if (msgtext.search("hi") != -1 || msgtext.search("hey") != -1 ) {
+                    bot2.getBotProfile().then(response => {
+                        bot2.sendMessage(userProfile, new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + " "));
+                    });
+                }              
+                else if (msgtext.search('help') != -1) {
+                    bot2.sendMessage(userProfile, new TextMessage("write 'Check Flight' to Check Flight"));
+                }
+                else if (msgtext.search("checkflight") != -1) {
+                    bot2.sendMessage(userProfile, new TextMessage("Please write your Flight ID "), "CheckFlight")
+                }
+                else {
+                    console.log("++++++++++++++++++++++++++++++++++++")
+                    console.log(msg)
+                    console.log("++++++++++++++++++++++++++++++++++++")
+                    bot2.sendMessage(userProfile,[
+                            new TextMessage("Sorry , I Don't UnderStand This Word ")
+                    ]);
+                }
+
+            }
+            else if (msg.message.type == 'picture') {
+                bot2.sendMessage(userProfile, new TextMessage("Sorry , I Don't UnderStand This Picture"));
+            }
+            else {
+                console.log("Out of Message Type ")
+                bot2.sendMessage(userProfile, [
+                    new TextMessage("Please Select What do you want in Menu")
+                ]);
+            }
+        }
+
+    }
+    if (msg.event == 'conversation_started') {
+        
+        bot2.getBotProfile().then(response => {
+            bot2.sendMessage(userProfile, [
+                new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + "nice to meet you !!"),             
+            ],);
+        });
+    }
+    if (msg.event == 'subscribed') {
+        bot2.sendMessage(msg.user, [
+            new TextMessage("Thank you For Subscribed , Write 'CheckFlight' for CheckFlight"),
+        ])
+    }
+    if (msg.event == 'unsubscribed') {
+        console.log("Unsubscribed by ", msg);
+        //can add log to keep data
+    }
+    if (msg.event == 'seen') {
+        console.log("User id : " + msg.user_id + " Seen Last Message");
+        //Add log Seen msg timestamp or update db seend msg
+    }
+});
 app.post('/viber/webhooks', bot.middleware(), (req, res) => {
     const data = {
         "status": 0,
@@ -1270,15 +1434,21 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
     }
     if (msg.event == 'seen') {
         console.log("User id : " + msg.user_id + " Seen Last Message");
-        //Add log Seen msg timestamp or update db seend msg
+        //Add log Seen msg timestamp or update db send msg
     }
 });
 
 https.createServer(httpsOptions, app ).listen(port, () => { 
     bot.setWebhook(webhookUrl).then(() => {
-        console.log("setWeb Hook Finish")
+        console.log("setWeb Hook Bot 1 Finish")
     }).catch(err => {
-        console.log("On Error ")
+        console.log("On Error Bot 1 Error")
+        console.log(err)
+    });  
+    bot2.setWebhook(webhookUrl2).then(() => {
+        console.log("setWeb Hook Bot 2 Finish")
+    }).catch(err => {
+        console.log("On Error Bot 2 Error")
         console.log(err)
     });
 });

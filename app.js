@@ -2,7 +2,7 @@
 var express = require('express');
 
 var fs = require('fs');
-
+var moment = require('moment');
 
 var app = express();
 
@@ -792,89 +792,128 @@ app.post('/viber/webhooks2', bot2.middleware(), (req, res) => {
     //UserProfile : Sender Message Create For Reply
     if (msg.event == 'message') {
 
-        if (msg.message.tracking_data != '""') {
+        if (msg.message.tracking_data != '""' && msg.message.tracking_data != undefined) {
             if (msg.message.tracking_data == '"CheckFlight"') {
                 //bot2.sendMessage(userProfile, new TextMessage("This your Flight Detail :"));
-                var FlightID = msg.message.text
-                var Status = "Ready"
-                if (Status == "Delay") {
-                    Status = "<font color='#a83232'>" + "Delay" + "</font>"
-                }
-                else if (Status == "Ready") {            
-                    Status = "<font color='#38f548'>" + "Ready" + "</font>"
-                }
-                var Header = "Flight ID : <b>" + FlightID + "</b>   "
-                var Body =  "Date   : <b>" +"18 November 2019"+"</b><br><br>"
-                    Body += "From   : <b>" + "Thailand" + "</b><br>"
-                    Body += "To     : <b>" + " UK " + "</b><br><br>"
-                    Body += "Depart : <b>" + " 09:05" + "</b>      " + "Arrive : <b>" + " 20:10" + "</b>"
-                var APIFlex = {
-                    "Type": "rich_media",
-                    "ButtonsGroupColumns": 6,
-                    "ButtonsGroupRows": 6,
-                    "BgColor": "#FFFFFF",
-                    "Buttons": [
-                        {
-                            "Columns": 4,
-                            "Rows": 1,
-                            "Text": Header,
-                            "BgColor": "#ffffff",
-                            "ActionType": "none",
-                            "ActionBody": "none",
-                            "TextSize": "large",
-                            "TextVAlign": "bottom",
-                            "TextHAlign": "left"
-                        },{
-                            "Columns": 2,
-                            "Rows": 1,
-                            //"Image":"https://image.flaticon.com/icons/png/512/3/3850.png",
-                            "Text": Status,
-                            "BgColor": "#ffffff",
-                            "ActionType": "none",
-                            "ActionBody": "none",
-                            "TextSize": "large",
-                            "TextVAlign": "middle",
-                            "TextHAlign": "left"
-                        }, 
-                        {
-                            "Columns": 6,
-                            "Rows": 4,
-                            "Text": Body,
-                            "BgColor": "#ffffff",
-                            "ActionType": "none",
-                            "ActionBody": "none",
-                            "TextSize": "medium",
-                            "TextVAlign": "middle",
-                            "TextHAlign": "left"
-                        },
-                        {
-                            "Columns": 6,
-                            "Rows": 1,
-                            "Text": "<font color='#8367db'>Contact +66 99 999 9999 </font>",
-                            "BgColor":"#cfd9ff",
-                            "ActionType": "none",
-                            "ActionBody": "none",
-                            "TextSize": "medium",
-                            "TextVAlign": "middle",
-                            "TextHAlign": "center"
+
+                var request = require('request'),
+                    username = "smusha",
+                    password = "1b060f5f49607d79c1701da9c5d0a3cab0df7f2a",
+                    url = "http://flightxml.flightaware.com/json/FlightXML3/FlightInfoStatus?ident=" + msg.message.text,
+                    auth = "Basic " + new Buffer(username + ":" + password).toString("base64");
+
+                request(
+                    {
+                        url: url,
+                        headers: {
+                            "Authorization": auth
                         }
-                    ]
-                }
+                    },
+                    function (error, response, body) {
+                        if (error != null) {
 
-                bot2.sendMessage(userProfile, new RichMediaMessage(APIFlex))
+                        }
+                        else {
+                            var data = JSON.parse(body)
+                            console.log("**********************************")
+                            console.log("Ori City : "+data.FlightInfoStatusResult.flights[0].origin.city)
+                            console.log("Des City : "+data.FlightInfoStatusResult.flights[0].destination.city)
+                            console.log("take Off delay : "+data.FlightInfoStatusResult.flights[0].departure_delay)
+                            console.log("landing delay : " + data.FlightInfoStatusResult.flights[0].arrival_delay)
+                            console.log("Date Start : "+data.FlightInfoStatusResult.flights[0].estimated_departure_time.date)
+                            console.log("Time Start : "+data.FlightInfoStatusResult.flights[0].estimated_departure_time.time)
+                            console.log("Date Finish : "+data.FlightInfoStatusResult.flights[0].estimated_arrival_time.date)
+                            console.log("Time Finish : " + data.FlightInfoStatusResult.flights[0].estimated_arrival_time.time)
+                            console.log("**********************************")
+                            var FlightID = msg.message.text
+                            var Status = "Ready"
+                            if (data.FlightInfoStatusResult.flights[0].departure_delay > 0) {
+                                Status = "Delay"
+                            } else if (data.FlightInfoStatusResult.flights[0].departure_delay < 0) {
+                                Status = "Ready"
+                            } else {
+                                Status = "Ready"
+                            }
 
+                            if (Status == "Delay") {
+                                Status = "<font color='#a83232'>" + "Delay" + "</font>"
+                            }
+                            else if (Status == "Ready") {
+                                Status = "<font color='#38f548'>" + "Ready" + "</font>"
+                            }
+                            var Header = "Flight ID : <b>" + FlightID + "</b>   "
+                            var Body = "Date   : <b>" + data.FlightInfoStatusResult.flights[0].estimated_departure_time.date + "</b><br><br>"
+                            Body += "From   : <b>" + data.FlightInfoStatusResult.flights[0].origin.city + "</b><br>"
+                            Body += "To     : <b>" + data.FlightInfoStatusResult.flights[0].destination.city + "</b><br><br>"
+                            Body += "Depart : <b>" + data.FlightInfoStatusResult.flights[0].estimated_departure_time.time + "</b>      " + "Arrive : <b>" + data.FlightInfoStatusResult.flights[0].estimated_arrival_time.time + "</b>"
+                            var APIFlex = {
+                                "Type": "rich_media",
+                                "ButtonsGroupColumns": 6,
+                                "ButtonsGroupRows": 6,
+                                "BgColor": "#FFFFFF",
+                                "Buttons": [
+                                    {
+                                        "Columns": 4,
+                                        "Rows": 1,
+                                        "Text": Header,
+                                        "BgColor": "#ffffff",
+                                        "ActionType": "none",
+                                        "ActionBody": "none",
+                                        "TextSize": "large",
+                                        "TextVAlign": "bottom",
+                                        "TextHAlign": "left"
+                                    }, {
+                                        "Columns": 2,
+                                        "Rows": 1,
+                                        //"Image":"https://image.flaticon.com/icons/png/512/3/3850.png",
+                                        "Text": Status,
+                                        "BgColor": "#ffffff",
+                                        "ActionType": "none",
+                                        "ActionBody": "none",
+                                        "TextSize": "large",
+                                        "TextVAlign": "middle",
+                                        "TextHAlign": "left"
+                                    },
+                                    {
+                                        "Columns": 6,
+                                        "Rows": 4,
+                                        "Text": Body,
+                                        "BgColor": "#ffffff",
+                                        "ActionType": "none",
+                                        "ActionBody": "none",
+                                        "TextSize": "medium",
+                                        "TextVAlign": "middle",
+                                        "TextHAlign": "left"
+                                    },
+                                    {
+                                        "Columns": 6,
+                                        "Rows": 1,
+                                        "Text": "<font color='#8367db'>Contact +66 99 999 9999 </font>",
+                                        "BgColor": "#cfd9ff",
+                                        "ActionType": "none",
+                                        "ActionBody": "none",
+                                        "TextSize": "medium",
+                                        "TextVAlign": "middle",
+                                        "TextHAlign": "center"
+                                    }
+                                ]
+                            }
+
+                            bot2.sendMessage(userProfile, new RichMediaMessage(APIFlex))
+                        }
+                    }
+                );
             }
-
         }
         else {
             if (msg.message.type == 'text') {
                 var msgtext = msg.message.text
                 msgtext = msgtext.toLowerCase();
-                if (msgtext.search("hi") != -1 || msgtext.search("hey") != -1 ) {
+                if (msgtext.search("hi") != -1 || msgtext.search("hey") != -1) {
                     bot2.getBotProfile().then(response => {
                         bot2.sendMessage(userProfile, new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + " "));
                     });
-                }              
+                }
                 else if (msgtext.search('help') != -1) {
                     bot2.sendMessage(userProfile, new TextMessage("write 'Check Flight' to Check Flight"));
                 }
@@ -885,8 +924,8 @@ app.post('/viber/webhooks2', bot2.middleware(), (req, res) => {
                     console.log("++++++++++++++++++++++++++++++++++++")
                     console.log(msg)
                     console.log("++++++++++++++++++++++++++++++++++++")
-                    bot2.sendMessage(userProfile,[
-                            new TextMessage("Sorry , I Don't UnderStand This Word ")
+                    bot2.sendMessage(userProfile, [
+                        new TextMessage("Sorry , I Don't UnderStand This Word ")
                     ]);
                 }
 
@@ -947,7 +986,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
     //UserProfile : Sender Message Create For Reply
     if (msg.event == 'message') {
 
-        if (msg.message.tracking_data != '""') {
+        if (msg.message.tracking_data != '""' && msg.message.tracking_data != undefined) {
             // Check Tracking_data in database 
             if (msg.message.tracking_data == '"keyboard Menu"') {
                 // Check message.text 
@@ -1415,7 +1454,7 @@ app.post('/viber/webhooks', bot.middleware(), (req, res) => {
         
         bot.getBotProfile().then(response => {
             bot.sendMessage(userProfile, [
-                new TextMessage("Hi , " + userProfile.name + " I'm " + response.name + "nice to meet you !!"),
+                new TextMessage("Hi , " + userProfile.name + "nice to meet you !!"),
                 new TextMessage("Please select what do you want in menu"),
                 mainkeySendback
             ],mainkeytrack);
